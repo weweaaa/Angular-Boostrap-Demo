@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th *ngFor="let colName of getNestedLoopKey(data)" scope="col" style="white-space: nowrap">
+        {{ colName }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let dataRow of data | keyvalue">
+      <!-- <th scope="row">{{dataRow.value.id}}</th> -->
+      <td *ngFor="let dataRow2 of getNestedLoopValues(dataRow.value)">
+        {{ dataRow2 }}
+      </td>
+    </tr>
+  </tbody>
+</table>
